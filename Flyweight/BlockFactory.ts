@@ -8,18 +8,18 @@ const BLOCK_DATA: Record<string, { texture: string; color: string }> = {
 };
 
 export class BlockFactory {
-    #types: Map<string, BlockType> = new Map();
+    private types: Map<string, BlockType> = new Map();
 
     getBlockType(name: string): BlockType {
-        if (!this.#types.has(name)) {
+        if (!this.types.has(name)) {
             const data = BLOCK_DATA[name];
             console.log(`Yangi BlockType yaratilmoqda: ${name}`)
-            this.#types.set(name, new BlockType(name, data.texture, data.color))
+            this.types.set(name, new BlockType(name, data.texture, data.color))
         }
-        return this.#types.get(name)!;
+        return this.types.get(name)!;
     }
 
     getTypeCount(): number {
-        return this.#types.size;
+        return this.types.size;
     }
 }

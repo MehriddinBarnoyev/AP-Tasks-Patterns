@@ -1,27 +1,27 @@
 export class BlockType {
-    #name: string;
-    #texture: string;
-    #color: string;
+    private name: string;
+    private texture: string;
+    private color: string;
 
     constructor(name: string, texture: string, color: string) {
-        this.#name = name;
-        this.#texture = texture;
-        this.#color = color;
+        this.name = name;
+        this.texture = texture;
+        this.color = color;
     }
 
     getName(): string {
-        return this.#name;
+        return this.name;
     }
 
     getTexture(): string {
-        return this.#texture;
+        return this.texture;
     }
 
     getColor(): string {
-        return this.#color;
+        return this.color;
     }
 
     toString(): string {
-        return `BlockType{name='${this.#name}', texture='${this.#texture}', color='${this.#color}'}`;
+        return `BlockType{name='${this.name}', texture='${this.texture}', color='${this.color}'}`;
     }
 }
